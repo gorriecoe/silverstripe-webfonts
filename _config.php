@@ -2,4 +2,4 @@
 
 use SilverStripe\Forms\HTMLEditor\HTMLEditorConfig;
 // Enable the Webfont TinyMCE plugin by default.
-HtmlEditorConfig::get('cms')->enablePlugins(['webfont' => null]);
+HtmlEditorConfig::get('cms')->enablePlugins(['webfonts' => null]);
