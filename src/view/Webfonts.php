@@ -13,7 +13,7 @@ use SilverStripe\View\Requirements;
  */
 class Webfonts implements TemplateGlobalProvider
 {
-    private static $webfontloaderversion = '1.6.26';
+    private static $WebfontLoaderVersion = '1.6.26';
 
     private static $TypeKitID = '';
 
@@ -48,28 +48,40 @@ class Webfonts implements TemplateGlobalProvider
 
     public static function WebFontLoader()
     {
+        $config = SELF::WebFontLoaderConfig();
+        Requirements::javascript(SELF::WebFontLoaderLibrary());
+        Requirements::customScript("WebFont.load({$config});");
+    }
+
+    public static function WebFontLoaderLibrary()
+    {
+        $webfontLoaderVersion = Config::inst()->get(__CLASS__, 'WebfontLoaderVersion') ?: '1';
+        return "https://ajax.googleapis.com/ajax/libs/webfont/{$webfontLoaderVersion}/webfont.js";
+    }
+
+    public static function WebFontLoaderConfig()
+    {
+        $configInst = Config::inst()->get(__CLASS__);
         $config = [];
-        if ($typekitID = Config::inst()->get(__CLASS__, 'TypeKitID')) {
+        if ($typekitID = $configInst['TypeKitID']) {
             $config['typekit']['id'] = $typekitID;
         }
-        if ($fontscomID = Config::inst()->get(__CLASS__, 'FontsComID')) {
+        if ($fontscomID = $configInst['FontsComID']) {
             $config['monotype']['projectId'] = $fontscomID;
         }
-        $googleFonts = Config::inst()->get(__CLASS__, 'GoogleFonts');
+        $googleFonts = $configInst['GoogleFonts'];
         if ($googleFonts && Count($googleFonts)) {
             $config['google']['families'] = $googleFonts;
         }
-        $customFonts = Config::inst()->get(__CLASS__, 'CustomFonts');
+        $customFonts = $configInst['CustomFonts'];
         if ($customFonts && Count($customFonts)) {
             $config['custom'] = [
                 'families' => array_keys($customFonts),
                 'urls' => array_values($customFonts)
             ];
         }
-        $webFontLoaderVersion = Config::inst()->get(__CLASS__, 'webfontloaderversion') ?: '1';
-        $config = Convert::array2json($config);
-        Requirements::javascript("https://ajax.googleapis.com/ajax/libs/webfont/{$webFontLoaderVersion}/webfont.js");
-        Requirements::customScript("WebFont.load({$config});");
+        $webFontLoaderVersion = $configInst['WebfontLoaderVersion'] ?: '1';
+        return Convert::array2json($config);
     }
 
     public static function TypeKitID()
