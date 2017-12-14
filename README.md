@@ -29,7 +29,7 @@ One of the following can be used in page template:
 - `$TypeKitID`: Returns the Typekit kit ID.
 - `$WebFontLoader`: Returns [web font loader](https://github.com/typekit/webfontloader) embed code.
 
-** Example **
+#### Example
 ```html
 <head>
     <title>Example.com</title>
@@ -50,7 +50,7 @@ One of the following can be used in page template:
 - `$GoogleFonts`: Returns style link code.
 - `$WebFontLoader`: Returns [web font loader](https://github.com/typekit/webfontloader) embed code.
 
-** Example **
+#### Example
 ```html
 <head>
     <title>Example.com</title>
@@ -70,7 +70,7 @@ One of the following can be used in page template:
 - `$FontsComID`: Returns the Font.com project ID.
 - `$WebFontLoader`: Returns [web font loader](https://github.com/typekit/webfontloader) embed code.
 
-** Example **
+#### Example
 ```html
 <head>
     <title>Example.com</title>
@@ -78,7 +78,7 @@ One of the following can be used in page template:
 </head>
 ```
 
-** Example **
+#### Example
 ```html
 <head>
     <title>Example.com</title>
@@ -98,7 +98,7 @@ gorriecoe\Webfonts\View\Webfonts:
 
 `$WebFontLoader` Returns [web font loader](https://github.com/typekit/webfontloader) embed code is the recommended variable used in page template for handling multiple font proivders:
 
-** Example **
+#### Example
 ```html
 <head>
     <title>Example.com</title>
