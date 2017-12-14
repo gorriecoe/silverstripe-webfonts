@@ -1,0 +1,26 @@
+{
+  "name": "gorriecoe/silverstripe-webfonts",
+  "description": "Provide webfont integration for SilverStripe CMS.",
+  "type": "silverstripe-vendormodule",
+  "license": "BSD 3-Clause",
+  "authors": [
+    {
+      "name": "Gorrie Coe",
+      "email": "gorriecoe@gmail.com"
+    }
+  ],
+  "keywords": [
+    "silverstripe",
+    "webfonts",
+    "typekit",
+    "googlefonts",
+    "fonts.com"
+  ],
+  "homepage": "http://github.com/gorriecoe/silverstripe-webfonts",
+  "require": {
+    "silverstripe/framework": "^4.0"
+  },
+  "extra": {
+    "installer-name": "webfonts"
+  }
+}

@@ -1,0 +1,6 @@
+---
+Name: webfontsconfig
+---
+SilverStripe\Admin\LeftAndMain:
+  extensions:
+    - 'gorriecoe\Webfonts\Extensions\LeftAndMainTinymcePlugin'
