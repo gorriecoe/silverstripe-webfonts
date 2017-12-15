@@ -21,6 +21,9 @@
     "silverstripe/framework": "^4.0"
   },
   "extra": {
-    "installer-name": "webfonts"
+    "installer-name": "webfonts",
+    "expose": [
+      "assets"
+    ]
   }
 }
