@@ -4,10 +4,10 @@
 
     window.tinymce.create('tinymce.plugins.WebfontsPlugin', {
         init: function (editor, url) {
-            editor.on('init', function(args) {
+            editor.on('PreInit', function(args) {
                 let doc = editor.getDoc(),
                     head = doc.getElementsByTagName('head')[0],
-                    js = "//<![CDATA[WebFont.load($Config);//]]>",
+                    js = "//<![CDATA[\nWebFont.load($Config);\n//]]>",
                     library = doc.createElement("script"),
                     script = doc.createElement("script"),
                     type = "application/javascript";
