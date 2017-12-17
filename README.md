@@ -12,9 +12,7 @@ Composer is the recommended way of installing SilverStripe modules.
 $ composer require gorriecoe/silverstripe-webfonts
 ```
 
-Add your typekit ID to your config.yml.
-
-## Usage
+## Documentation
 
 ### TypeKit
 Define the TypeKitID in config.yaml
