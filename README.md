@@ -78,14 +78,6 @@ One of the following can be used in page template:
 </head>
 ```
 
-#### Example
-```html
-<head>
-    <title>Example.com</title>
-    {$FontsCom}
-</head>
-```
-
 ### Multiple font providers
 Define the options as listed above in config.yaml
 ```
@@ -96,7 +88,7 @@ gorriecoe\Webfonts\View\Webfonts:
     - 'Droid Serif:bold'
 ```
 
-`$WebFontLoader` Returns [web font loader](https://github.com/typekit/webfontloader) embed code is the recommended variable used in page template for handling multiple font proivders:
+`$WebFontLoader` returns [web font loader](https://github.com/typekit/webfontloader) embed code is the recommended variable used in page template for handling multiple font providers.
 
 #### Example
 ```html
@@ -115,6 +107,4 @@ gorriecoe\Webfonts\View\Webfonts:
     'FontAwesome': '//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css'
 ```
 
-One of the following can be used in page template:
-
-- `$WebFontLoader`: Returns [web font loader](https://github.com/typekit/webfontloader) embed code.
+`$WebFontLoader` can be used in page template to return [web font loader](https://github.com/typekit/webfontloader) embed code.
