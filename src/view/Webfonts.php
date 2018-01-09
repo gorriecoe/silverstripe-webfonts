@@ -102,7 +102,7 @@ class Webfonts implements TemplateGlobalProvider
 
     public static function TypeKitStyle()
     {
-        if ($typekitID = Config::inst()->get('Webfonts', 'TypeKitID')) {
+        if ($typekitID = Config::inst()->get(__CLASS__, 'TypeKitID')) {
             Requirements::css("https://use.typekit.net/{$typekitID}.css");
         }
     }
@@ -114,7 +114,7 @@ class Webfonts implements TemplateGlobalProvider
 
     public static function FontsCom()
     {
-        if ($fontscomID = Config::inst()->get('Webfonts', 'FontsComID')) {
+        if ($fontscomID = Config::inst()->get(__CLASS__, 'FontsComID')) {
             Requirements::script("https://fast.fonts.net/jsapi/{$fontscomID}.js");
         }
     }
