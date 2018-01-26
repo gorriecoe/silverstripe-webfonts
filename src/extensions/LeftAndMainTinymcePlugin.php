@@ -15,10 +15,8 @@ class LeftAndMainTinymcePlugin extends LeftAndMainExtension
 {
     public function init()
     {
-        // Temporary fix until ModuleResourceLoader is added to Requirements::javascriptTemplate
-        $file = ModuleResourceLoader::singleton()->resolvePath('gorriecoe/silverstripe-webfonts: assets/js/tinymce.webfonts.js');
         Requirements::javascriptTemplate(
-            $file,
+            'gorriecoe/silverstripe-webfonts: assets/js/tinymce.webfonts.js',
             [
                 'Library' => Webfonts::WebFontLoaderLibrary(),
                 'Config' => Webfonts::WebFontLoaderConfig()

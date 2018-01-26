@@ -18,7 +18,7 @@
   ],
   "homepage": "http://github.com/gorriecoe/silverstripe-webfonts",
   "require": {
-    "silverstripe/framework": "^4.0"
+    "silverstripe/framework": "^4.0.2"
   },
   "extra": {
     "installer-name": "webfonts",
