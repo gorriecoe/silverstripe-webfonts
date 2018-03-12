@@ -61,26 +61,24 @@ class Webfonts implements TemplateGlobalProvider
 
     public static function WebFontLoaderConfig()
     {
-        $configInst = Config::inst()->get(__CLASS__);
+        extract(Config::inst()->get(__CLASS__));
         $config = [];
-        if ($typekitID = $configInst['TypeKitID']) {
-            $config['typekit']['id'] = $typekitID;
+        if (isset($TypeKitID)) {
+            $config['typekit']['id'] = $TypeKitID;
         }
-        if ($fontscomID = $configInst['FontsComID']) {
-            $config['monotype']['projectId'] = $fontscomID;
+        if (isset($FontsComID)) {
+            $config['monotype']['projectId'] = $FontsComID;
         }
-        $googleFonts = $configInst['GoogleFonts'];
-        if ($googleFonts && Count($googleFonts)) {
-            $config['google']['families'] = $googleFonts;
+        if (isset($GoogleFonts) && Count($GoogleFonts)) {
+            $config['google']['families'] = $GoogleFonts;
         }
-        $customFonts = $configInst['CustomFonts'];
-        if ($customFonts && Count($customFonts)) {
+        if (isset($CustomFonts) && Count($CustomFonts)) {
             $config['custom'] = [
-                'families' => array_keys($customFonts),
-                'urls' => array_values($customFonts)
+                'families' => array_keys($CustomFonts),
+                'urls' => array_values($CustomFonts)
             ];
         }
-        $webFontLoaderVersion = $configInst['WebfontLoaderVersion'] ?: '1';
+        $webFontLoaderVersion = isset($WebfontLoaderVersion) ? $WebfontLoaderVersion: '1';
         return Convert::array2json($config);
     }
 
