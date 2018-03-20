@@ -63,10 +63,10 @@ class Webfonts implements TemplateGlobalProvider
     {
         extract(Config::inst()->get(__CLASS__));
         $config = [];
-        if (isset($TypeKitID)) {
+        if (isset($TypeKitID) && $TypeKitID) {
             $config['typekit']['id'] = $TypeKitID;
         }
-        if (isset($FontsComID)) {
+        if (isset($FontsComID) && $FontsComID) {
             $config['monotype']['projectId'] = $FontsComID;
         }
         if (isset($GoogleFonts) && Count($GoogleFonts)) {
