@@ -15,12 +15,6 @@ class Webfonts implements TemplateGlobalProvider
 {
     private static $WebfontLoaderVersion = '1.6.26';
 
-    private static $TypeKitID = '';
-
-    private static $FontsComID = '';
-
-    private static $GoogleFonts = [];
-
     public static function get_template_global_variables()
     {
         return array(
