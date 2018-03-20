@@ -93,7 +93,10 @@ class Webfonts implements TemplateGlobalProvider
             Requirements::customScript(
                 ArrayData::create([
                     'TypeKitID' => $typekitID
-                ])->renderWith('TypeKitScript')
+                ])->renderWith([
+                    'type' => 'Includes',
+                    'TypeKitScript'
+                ])
             );
         }
     }
