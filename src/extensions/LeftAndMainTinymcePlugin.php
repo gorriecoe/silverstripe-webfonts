@@ -13,12 +13,14 @@ class LeftAndMainTinymcePlugin extends LeftAndMainExtension
 {
     public function init()
     {
-        Requirements::javascriptTemplate(
-            'gorriecoe/silverstripe-webfonts: assets/js/tinymce.webfonts.js',
-            [
-                'Library' => Webfonts::WebFontLoaderLibrary(),
-                'Config' => Webfonts::WebFontLoaderConfig()
-            ]
-        );
+        if ($config = Webfonts::WebFontLoaderConfig()) {
+            Requirements::javascriptTemplate(
+                'gorriecoe/silverstripe-webfonts: assets/js/tinymce.webfonts.js',
+                [
+                    'Library' => Webfonts::WebFontLoaderLibrary(),
+                    'Config' => $config
+                ]
+            );
+        }
     }
 }

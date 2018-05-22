@@ -42,9 +42,10 @@ class Webfonts implements TemplateGlobalProvider
 
     public static function WebFontLoader()
     {
-        $config = SELF::WebFontLoaderConfig();
-        Requirements::javascript(SELF::WebFontLoaderLibrary());
-        Requirements::customScript("WebFont.load({$config});");
+        if ($config = SELF::WebFontLoaderConfig()) {
+            Requirements::javascript(SELF::WebFontLoaderLibrary());
+            Requirements::customScript("WebFont.load({$config});");
+        }
     }
 
     public static function WebFontLoaderLibrary()
@@ -72,8 +73,9 @@ class Webfonts implements TemplateGlobalProvider
                 'urls' => array_values($CustomFonts)
             ];
         }
-        $webFontLoaderVersion = isset($WebfontLoaderVersion) ? $WebfontLoaderVersion: '1';
-        return Convert::array2json($config);
+        if (Count($config)) {
+            return Convert::array2json($config);
+        }
     }
 
     public static function TypeKitID()
