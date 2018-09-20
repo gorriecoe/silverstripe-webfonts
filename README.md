@@ -1,5 +1,7 @@
 # Webfonts Module
 
+[![ko-fi](https://www.ko-fi.com/img/donate_sm.png)](https://ko-fi.com/E1E5HWRR)
+
 Provide webfonts integration for SilverStripe CMS allowing fonts inside HTMLEditorField and frontend.
 
 ## Requirements
